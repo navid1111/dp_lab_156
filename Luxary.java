@@ -6,5 +6,5 @@ public class Luxary implements IRideType {
         return 400;
     }
 
-   h
+
 }

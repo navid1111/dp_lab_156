@@ -7,6 +7,7 @@ public class Rider {
     private  double longitude;
     private  double rating;
     private PaymentMethode preferredPaymentMethode;
+    private  IRideType iRideType;
 
 
     public Rider(String id, String name, String location, PaymentMethode paymentMethod) {
@@ -21,7 +22,7 @@ public class Rider {
     }
 //– Behaviors: requestRide(), rateDriver(), makePayment().
 //            – Relations: Can book a Trip, interacts with PaymentMethod and Driver.
-    public  void requestRide(double latitude,double longitude, RideType rideType,PaymentMethode preferredPaymentMethode)
+    public  void requestRide(double latitude,double longitude, IRideType rideType,PaymentMethode preferredPaymentMethode)
     {
 
     }

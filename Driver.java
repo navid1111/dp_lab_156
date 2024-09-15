@@ -2,7 +2,7 @@ public class Driver {
 //    Attributes: id, name, vehicleType, location, rating, availability.
     private  String id;
     private  String name;
-    private  RideType rideType;
+
 
     private  String location;
     private double currentLatitude;
