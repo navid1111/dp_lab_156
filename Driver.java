@@ -16,11 +16,13 @@ public class Driver {
         this.rating=(this.rating+rating)/2;
     }
 
-    public Driver(String id, String name, String vehicleType, String location) {
+    public Driver(String id, String name, String vehicleType, double currentLatitude,double currentLongitude) {
         this.id = id;
         this.name = name;
         this.vehicleType = vehicleType;
-        this.location = location;
+        this.currentLatitude=currentLatitude;
+        this.currentLongitude=currentLongitude;
+
         this.availability = true; // Initially, drivers are available
     }
 //    – Behaviors: acceptRide(), rateRider(), updateLocation(), startTrip().
@@ -34,7 +36,8 @@ public class Driver {
         this.availability=false;
 
     }
-    public void updateLocation(double latitude,double longitude){
+
+    public void get(double latitude,double longitude){
         this.currentLatitude=latitude;
         this.currentLongitude=longitude;
     }

@@ -1,4 +1,4 @@
 public interface PaymentMethode {
-    void paymentProcess(double amount);
+    void pay(double amount);
 
 }

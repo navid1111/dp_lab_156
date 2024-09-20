@@ -6,15 +6,14 @@ public class Rider {
     private  double latitude;
     private  double longitude;
     private  double rating;
-    private PaymentMethode preferredPaymentMethode;
-    private  IRideType iRideType;
 
 
-    public Rider(String id, String name, String location, PaymentMethode paymentMethod) {
+
+    public Rider(String id, String name, String location) {
         this.id = id;
         this.name = name;
         this.location = location;
-        this.preferredPaymentMethode = paymentMethod;
+
 
     }
     public void setRating(double rating){
@@ -24,6 +23,8 @@ public class Rider {
 //            – Relations: Can book a Trip, interacts with PaymentMethod and Driver.
     public  void requestRide(double latitude,double longitude, IRideType rideType,PaymentMethode preferredPaymentMethode)
     {
+        System.out.println("Rider"+this.name+" is requesting for a ride");
+
 
     }
     public void rateDriver(Driver driver,double rating){
@@ -31,8 +32,13 @@ public class Rider {
 
 
     }
-    public void makePayment(PaymentMethode paymentMethode,double amount){
+    public void pay(PaymentMethode paymentMethode,IRideType rideType, double distance){
+        double amount=rideType.ratePerKn()*distance;
+        System.out.println("Payed TK"+amount);
 
     }
+
+
+
 
 }

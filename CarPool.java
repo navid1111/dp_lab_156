@@ -1,6 +1,7 @@
 public class CarPool implements IRideType{
+    double rate;
     @Override
-    public double ratePerKn(double rate) {
+    public double ratePerKn() {
         return rate;
     }
 }

@@ -1,4 +1,5 @@
 public interface IRideType {
-    double ratePerKn(double rate);
+
+    double ratePerKn();
 
 }

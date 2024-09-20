@@ -1,9 +1,10 @@
 public class Luxary implements IRideType {
+    double rate;
 
 
     @Override
-    public double ratePerKn(double rate) {
-        return 400;
+    public double ratePerKn() {
+        return rate;
     }
 
 
