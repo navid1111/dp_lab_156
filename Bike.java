@@ -1,5 +1,5 @@
 public class Bike implements IRideType {
-    double rate;
+    double rate=200;
     @Override
     public double ratePerKn() {
         return rate;

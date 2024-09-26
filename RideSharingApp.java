@@ -4,21 +4,23 @@ public class RideSharingApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Create instances of Rider and Driver
+
         Rider rider = new Rider("1234", "John Doe", "Dhaka");
         Driver driver = new Driver("123", "Mask", "SUV", 23.33, 90);
 
         // Ask the user to select a ride type
         System.out.println("Select Ride Type:");
-        System.out.println("1. Economy Ride");
-        System.out.println("2. Premium Ride");
+        System.out.println("1. Carpool");
+        System.out.println("2. Bike");
         int rideTypeChoice = scanner.nextInt();
         IRideType rideType = null;
+        Booking book =new Booking(rider,driver,400);
 
-        // Set the ride type based on user input
+
         switch (rideTypeChoice) {
             case 1:
                 rideType = new CarPool();
+
                 break;
             case 2:
                 rideType = new Bike();
@@ -27,6 +29,7 @@ public class RideSharingApp {
                 System.out.println("Invalid ride type selected.");
                 return;
         }
+
 
         // Ask the user to select a payment method
         System.out.println("Select Payment Method:");
@@ -48,18 +51,38 @@ public class RideSharingApp {
                 paymentMethod = new OnlinePayment(email);
                 break;
             default:
-                System.out.println("Invalid payment method selected.");
+                System.out.println("Invalid payment method selected. ");
                 return;
         }
 
         // Set the distance for the trip
-        double distance = 12.5; // in kilometers
+
 
         // Create the booking
-        Booking booking = new Booking(rider, driver, rideType, paymentMethod, distance);
+        book.setRideType(rideType);
+        book.setPaymentMethode(paymentMethod);
+        System.out.println("Do you want to confirm your ride Your total bill was "+rideType.ratePerKn()*400);
+        System.out.println("1 YES");
+        System.out.println("2 NO");
+        int confirmation = scanner.nextInt();
+
+
+
+        switch (confirmation){
+            case 1:
+                book.makeBooking();
+                System.out.println("Booking successful");
+                break;
+            case 2:
+                return;
+
+
+
+
+        }
 
         // Make the booking and process the ride
-        booking.makeBooking(driver,rider,rideType,paymentMethod,distance);
+
 
         // Close the scanner
         scanner.close();

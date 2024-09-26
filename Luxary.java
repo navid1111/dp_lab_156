@@ -1,5 +1,5 @@
 public class Luxary implements IRideType {
-    double rate;
+    double rate=100;
 
 
     @Override

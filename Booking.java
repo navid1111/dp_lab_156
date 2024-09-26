@@ -7,15 +7,24 @@ public class Booking {
     private double distance;
 
     // Constructor
-    public Booking(Rider rider, Driver driver, IRideType rideType, PaymentMethode paymentMethode,double distance) {
+    public Booking(Rider rider, Driver driver,double distance) {
         this.rider = rider;
         this.driver = driver;
-        this.rideType = rideType;
-        this.paymentMethode = paymentMethode;
+
         this.distance=distance;
     }
-    public void makeBooking(Driver driver ,Rider rider,IRideType rideType,PaymentMethode paymentMethode,double distance){
-        rider.pay(this.paymentMethode,this.rideType,this.distance);
+
+    public void setPaymentMethode(PaymentMethode paymentMethode) {
+        this.paymentMethode = paymentMethode;
+    }
+    public void setRideType(IRideType rideType){
+        this.rideType=rideType;
+    }
+
+    public void makeBooking(){
+        paymentMethode.pay(rideType.ratePerKn()*distance);
+
+
 
 
 
